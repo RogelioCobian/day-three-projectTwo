@@ -3,9 +3,8 @@ import { Component, OnInit } from '@angular/core';
 interface Person {
   firstName: string;
   lastName: string;
-  customer: Person;
 
-  sayHi: string;
+  sayHi(): string;
 
 }
 
@@ -20,5 +19,24 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
+    const customer: Person = {
+      firstName: 'Hello',
+      lastName: 'World',
+      sayHi: () => {
+        // console.log(5 + 5 );
+        return 'Hi';
+      }
+
+    };
+
+  console.log(customer.sayHi());
+
+  const employee: Person = {
+    firstName: 'test',
+    lastName: 'employee',
+    sayHi: () => {
+      return 'Hello';
+    }
+  };
   }
 }
